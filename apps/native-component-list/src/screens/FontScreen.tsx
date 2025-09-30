@@ -7,7 +7,7 @@ import * as Font from 'expo-font';
 import { RenderToImageResult } from 'expo-font';
 import { Image } from 'expo-image';
 import { useState, useEffect, Fragment } from 'react';
-import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Platform, ScrollView, StyleSheet, Text, View, PixelRatio } from 'react-native';
 
 import { Page, Section } from '../components/Page';
 
@@ -242,12 +242,17 @@ function VectorIconSection() {
 
   return (
     <Section title="vector icon to image" gap={5}>
+      <Text>
+        PixelRatio: {PixelRatio.get()} (to get the pixel size of the images, multiply
+        `renderedImage.dimension * pixelRatio`)
+      </Text>
+
       {icons.map((icon) => {
         return (
           !!icon && (
             <Fragment key={icon.uri}>
               <Text>
-                Icon rendered to image {round(icon.width)}x{round(icon.height)}
+                Icon rendered to image {round(icon.width)}x{round(icon.height)}, scale: {icon.scale}
               </Text>
               <Image
                 source={icon}
