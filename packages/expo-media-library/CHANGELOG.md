@@ -6,6 +6,7 @@
 
 ### 🎉 New features
 
+- [next] Add `asset.getInfo()`
 - [next] Add exif support ([#39992](https://github.com/expo/expo/pull/39992) by [@Wenszel](https://github.com/Wenszel))
 - [next] Add `Album.get(title)` ([#39717](https://github.com/expo/expo/pull/39717) by [@Wenszel](https://github.com/Wenszel))
 
